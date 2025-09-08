@@ -28,7 +28,7 @@ RUN curl -o- -L https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(wh
 COPY xdg-open /app/helper-scripts/xdg-open
 RUN chmod a+x /app/helper-scripts/xdg-open && \
     ln -s /app/helper-scripts/xdg-open /app/helper-scripts/gnome-open && \
-    echo 'export PATH="$PATH:/path/to/dir/app/helper-scripts"' > ~/.bashrc && \
+    echo 'export PATH="$PATH:/path/to/dir/app/helper-scripts"' >> ~/.bashrc && \
     ln -s /app/helper-scripts/xdg-open /usr/bin/xdg-open && \
     ln -s /app/helper-scripts/xdg-open /usr/bin/gnome-open
 
