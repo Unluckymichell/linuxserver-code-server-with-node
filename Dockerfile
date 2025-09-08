@@ -25,5 +25,10 @@ RUN PATH+=":$HOME/n/bin" && \
 # Install pnpm, another alternative to npm
 RUN curl -o- -L https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
 
+COPY xdg-open /app/helper-scripts/xdg-open
+RUN chmod a+x /app/helper-scripts/xdg-open && \
+    echo 'export PATH="$PATH:/path/to/dir/app/helper-scripts/xdg-open"' > ~/.bashrc && \
+    ln -s /path/to/binary /usr/bin/xdg-open
+
 # Cache your git password for 15 minutes, so you don't have to enter it for every push
 RUN git config --global credential.helper cache && git config --global core.editor "nano"
