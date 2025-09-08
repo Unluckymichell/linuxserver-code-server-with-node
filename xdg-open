@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# https://www.reddit.com/r/linuxadmin/comments/18c5nrr/xdgopen_shim_for_remote_ssh_to_headless_server/?rdt=59827
+
+echo '-----------------------------------------------------------------------'
+echo "$@"
+echo '-----------------------------------------------------------------------'
+echo "$@" > ~/browser.url
+nohup code ~/browser.url > /dev/null 2>&1 &
+true
