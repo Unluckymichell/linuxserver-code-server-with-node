@@ -30,4 +30,4 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/unluckymichell/code-server-with-node:latest
+          tags: ghcr.io/unluckymichell/linuxserver-code-server-with-node:latest
